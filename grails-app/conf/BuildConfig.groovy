@@ -31,3 +31,4 @@ grails.project.dependency.resolution = {
 }
 
 grails.plugin.location.jesque = '../grails-jesque'
+grails.plugin.location.redis = '../grails-redis'

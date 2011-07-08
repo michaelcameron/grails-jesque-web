@@ -1,4 +1,7 @@
 import net.greghaines.jesque.meta.dao.impl.QueueInfoDAORedisImpl
+import net.greghaines.jesque.meta.dao.impl.FailureDAORedisImpl
+import net.greghaines.jesque.meta.dao.impl.KeysDAORedisImpl
+import net.greghaines.jesque.meta.dao.impl.WorkerInfoDAORedisImpl
 
 class JesqueWebGrailsPlugin {
     // the plugin version
@@ -28,7 +31,10 @@ Web interfce to view and manage jesque queues, jobs and workers.
     }
 
     def doWithSpring = {
+        failureDao(FailureDAORedisImpl, ref('jesqueConfig'), ref('redisPool'))
+        keyDao(KeysDAORedisImpl, ref('jesqueConfig'), ref('redisPool'))
         queueInfoDao(QueueInfoDAORedisImpl, ref('jesqueConfig'), ref('redisPool'))
+        workerInfoDao(WorkerInfoDAORedisImpl, ref('jesqueConfig'), ref('redisPool'))
     }
 
     def doWithDynamicMethods = { ctx ->
