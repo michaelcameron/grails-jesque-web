@@ -32,7 +32,7 @@ Web interfce to view and manage jesque queues, jobs and workers.
 
     def doWithSpring = {
         failureDao(FailureDAORedisImpl, ref('jesqueConfig'), ref('redisPool'))
-        keyDao(KeysDAORedisImpl, ref('jesqueConfig'), ref('redisPool'))
+        keysDao(KeysDAORedisImpl, ref('jesqueConfig'), ref('redisPool'))
         queueInfoDao(QueueInfoDAORedisImpl, ref('jesqueConfig'), ref('redisPool'))
         workerInfoDao(WorkerInfoDAORedisImpl, ref('jesqueConfig'), ref('redisPool'))
     }
