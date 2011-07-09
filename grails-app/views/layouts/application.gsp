@@ -25,17 +25,19 @@
 		<div class="header">
 			<ul class="nav">
 			<g:each in="${tabs}" var="tab">
-				<li <g:if test="${tab == activeTab}"> class="current"</g:if>><a href="${tab}"/>${tab}</a></li>
+				<li <g:if test="${tab == activeTab}"> class="current"</g:if>>
+                    <g:link action="${tab.toLowerCase()}">${tab}</g:link>
+                </li>
 			</g:each>
 			</ul>
 			<g:if test="${namespace != 'resque'}">
                 <abbr class="namespace" title="Resque's Redis Namespace">${namespace}</abbr>
             </g:if>
 		</div>
-		<g:if test="${!subTabs}">
+		<g:if test="${subTabs}">
 		<ul class="subnav">
 		<g:each in="${subTabs}" var="subTab">
-			<li<g:if test="${subTab == activeSubTab}"> class="current"</g:if>><a href="${activeTab}/${subTab}" />"><span>${subTab}</span></a></li>
+			<li<g:if test="${subTab == activeSubTab}"> class="current"</g:if>><a href="${activeTab}/${subTab}"><span>${subTab}</span></a></li>
 		</g:each>
 		</ul>
 		</g:if>
@@ -43,8 +45,8 @@
             <g:layoutBody/>
         </div>
         <div id="footer">
-            <p>Powered by <a href="https://github.com/gresrun/jesque">Jesque</a> v${version} /> - Inspired by <a href="https://github.com/defunkt/resque">Resque</a></p>
-            <p>Connected to Redis namespace ${namespace} on ${redisUri} /></p>
+            <p>Powered by <a href="https://github.com/gresrun/jesque">Jesque</a> v${version} - Inspired by <a href="https://github.com/defunkt/resque">Resque</a></p>
+            <p>Connected to Redis namespace ${namespace} on ${redisUri}</p>
         </div>
     </body>
 </html>
