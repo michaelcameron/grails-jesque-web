@@ -5,7 +5,7 @@ class JesqueStatsController extends JesqueController {
     def index = {
         def statType = params.statType
         if( !statType ) {
-            redirect(action:stats, params:[statType:statType])
+            redirect(action:index, params:[statType: "redis"])
             return
         }
 
