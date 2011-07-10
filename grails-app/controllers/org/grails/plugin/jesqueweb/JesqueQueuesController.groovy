@@ -1,6 +1,6 @@
 package org.grails.plugin.jesqueweb
 
-class QueuesController extends JesqueController {
+class JesqueQueuesController extends JesqueController {
 
     def index = {
         def model = [:]

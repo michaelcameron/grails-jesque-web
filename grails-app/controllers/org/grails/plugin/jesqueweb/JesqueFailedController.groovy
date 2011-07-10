@@ -1,6 +1,6 @@
 package org.grails.plugin.jesqueweb
 
-class FailedController extends JesqueController {
+class JesqueFailedController extends JesqueController {
 
     def index = {
         def offset = 0

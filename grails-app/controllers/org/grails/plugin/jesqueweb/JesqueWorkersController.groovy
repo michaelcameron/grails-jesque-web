@@ -1,6 +1,6 @@
 package org.grails.plugin.jesqueweb
 
-class WorkersController extends JesqueController {
+class JesqueWorkersController extends JesqueController {
 
     def index = { }
 }
