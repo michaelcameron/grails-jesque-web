@@ -5,12 +5,7 @@ class UrlMappings {
         "/jesque/queues/$queueName" (controller:"jesque", action:"queueDetail")
         "/jesque/stats/$statType" (controller:"jesque", action:"stats")
 
-        "/jesque/$subcontroller/$action?/$id?" {
-            controller = {
-                def controllerName = "jesque" + params.subcontroller.capitalize()
-                println "controllerName = $controllerName"
-                return controllerName
-            }
+        "/jesque/$controller/$action?/$id?" {
         }
 
 		"/"(controller:"jesque/overview")

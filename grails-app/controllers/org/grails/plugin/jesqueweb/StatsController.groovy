@@ -1,6 +1,6 @@
 package org.grails.plugin.jesqueweb
 
-class JesqueStatsController extends JesqueController {
+class StatsController extends JesqueController {
 
     def index = {
         def statType = params.statType
