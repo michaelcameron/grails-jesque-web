@@ -10,5 +10,7 @@ class UrlMappings {
         "/jesque/stats/$action?/$id?" { controller = "jesqueStats" }
         "/jesque/workers/$action?/$id?" { controller = "jesqueWorkers" }
         "/jesque/working/$action?/$id?" { controller = "jesqueWorking" }
+
+        "/" (controller: "jesqueOverview")
 	}
 }
