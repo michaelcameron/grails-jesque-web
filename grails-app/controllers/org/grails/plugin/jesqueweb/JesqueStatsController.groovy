@@ -38,7 +38,7 @@ class JesqueStatsController extends JesqueController {
 		resqueStats.environment = "development"
 		resqueStats.failed = failureDao.count
 		resqueStats.pending =  queueInfoDao.pendingCount
-		resqueStats.processed = queueInfoDao.processedCount
+		resqueStats.processed = queueInfoDa.processedCount
 		resqueStats.queues = queueInfoDao.queueNames.size()
 		resqueStats.servers = "[ $jesqueConfig.URI ]"
 		resqueStats.workers = workerInfoDao.workerCount
