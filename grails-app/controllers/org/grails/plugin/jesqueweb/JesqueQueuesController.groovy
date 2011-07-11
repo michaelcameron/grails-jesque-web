@@ -14,8 +14,8 @@ class JesqueQueuesController extends JesqueController {
         model
     }
 
-    def queueDetail = {
-        def queueName = params.queueName
+    def detail = {
+        def queueName = params.id
         def offset = 0
         def max = 20
         def model = [:]

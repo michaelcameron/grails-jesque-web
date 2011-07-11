@@ -8,12 +8,12 @@
     </tr>
     <g:each in="${queueList}" var="queue">
     <tr>
-        <td class="queue"><a class="queue" href="/queues/${queue}">${queue}</a></td>
+        <td class="queue"><g:link controller="jesqueQueues" action="detail" id="${queue}">${queue}</g:link></td>
         <td class="size">${queue.size}</td>
     </tr>
     </g:each>
     <tr class="${(totalFailureCount == 0) ? 'failed' : 'failure'}">
-        <td class="queue failed"><a class="queue" href="/failed">failed</a></td>
+        <td class="queue failed"><g:link controller="jesqueFailed">failed</g:link></td>
         <td class="size">${totalFailureCount}</td>
     </tr>
 </table>
