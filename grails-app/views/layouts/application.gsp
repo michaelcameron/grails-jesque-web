@@ -26,7 +26,7 @@
 			<ul class="nav">
 			<g:each in="${tabs}" var="tab">
 				<li <g:if test="${tab == activeTab}"> class="current"</g:if>>
-                    <g:link action="${tab.toLowerCase()}">${tab}</g:link>
+                    <g:link controller="jesque${tab}" >${tab}</g:link>
                 </li>
 			</g:each>
 			</ul>

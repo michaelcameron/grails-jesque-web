@@ -3,5 +3,7 @@ syntax: glob
 *.iws
 *.iml
 *.ipr
+*.un~
+out
 
 target
