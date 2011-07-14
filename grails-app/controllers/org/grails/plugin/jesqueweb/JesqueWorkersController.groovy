@@ -29,15 +29,20 @@ class JesqueWorkersController extends JesqueController {
         def workerName = params.id
         def workerInfo = workerInfoDao.getWorker(workerName)
         def hostMap = workerInfoDao.workerHostMap
+        def viewName
 
         if( workerInfo ) {
+            viewName = 'detail'
             model.activeSubTab = workerInfo.host
             model.worker = workerInfo
+        } else if(workerName == 'all') {
+            viewName = 'singleHost'
+            model.workers = hostMap.values().asList().flatten()
         } else {
             redirect action:index
         }
         model.activeSubTabs = hostMap.keySet()
 
-        model
+        render view:viewName, model:model
     }
 }

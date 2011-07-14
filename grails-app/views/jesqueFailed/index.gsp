@@ -37,7 +37,7 @@
 			<dt>Error</dt>
 			<dd class="error">
 				<a href="#" class="backtrace">${job.exception.message}</a>
-				<pre style="display: none;"><jesque:asBacktrace exception="${job.exception}"/></pre>
+				<pre style="display: none;">${job.exception}<%--<jesque:asBacktrace exception="${job.exception}"/>--%></pre>
 			</dd>
 		</dl>
 		<div class="r"></div>
