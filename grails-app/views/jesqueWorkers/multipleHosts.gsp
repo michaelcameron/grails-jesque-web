@@ -11,12 +11,12 @@
         </tr>
         <g:each in="${hostMap}" var="entry">
         <tr>
-            <td class="queue"><a class="queue" href="/workers/${entry.key}">${entry.key}</a></td>
+            <td class="queue"><g:link controller="jesqueWorkers" action="detail" id="${entry.key}">${entry.key}</g:link></td>
             <td class="size">${entry.value.size}</td>
         </tr>
         </g:each>
         <tr class="failed">
-            <td class="queue failed"><a class="queue" href="/workers/all">all workers</a></td>
+            <td class="queue failed"><g:link action="detail" id="all" class="queue">all workers</g:link></td>
             <td class="size">${totalWorkerCount}</td>
         </tr>
     </table>

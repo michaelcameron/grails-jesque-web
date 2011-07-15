@@ -16,6 +16,7 @@
 		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114x114-precomposed.png" />
 		<link rel="stylesheet" type="text/css" href="<g:resource dir="css" file="reset.css" />" />
 		<link rel="stylesheet" type="text/css" href="<g:resource dir="css" file="style.css" />" />
+        <%-- todo: use resources plugin --%>
 		<script type="text/javascript" src="<g:resource dir="js" file="date.js" />"></script>
 		<script type="text/javascript" src="<g:resource dir="js" file="jquery-1.5.1.min.js" />"></script>
 		<script type="text/javascript" src="<g:resource dir="js" file="jquery.relatize_date.js" />"></script>
@@ -37,7 +38,7 @@
 		<g:if test="${subTabs}">
 		<ul class="subnav">
 		<g:each in="${subTabs}" var="subTab">
-			<li<g:if test="${subTab == activeSubTab}"> class="current"</g:if>><a href="${activeTab}/${subTab}"><span>${subTab}</span></a></li>
+			<li<g:if test="${subTab == activeSubTab}"> class="current"</g:if>><g:link action="detail" id="${subTab}"><span>${subTab}</span></g:link></li>
 		</g:each>
 		</ul>
 		</g:if>
@@ -46,6 +47,7 @@
         </div>
         <div id="footer">
             <p>Powered by <a href="https://github.com/gresrun/jesque">Jesque</a> v${version} - Inspired by <a href="https://github.com/defunkt/resque">Resque</a></p>
+            <%--todo: add common properties via some DRY approach --%>
             <p>Connected to Redis namespace ${namespace} on ${redisUri}</p>
         </div>
     </body>

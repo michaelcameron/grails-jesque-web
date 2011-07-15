@@ -13,18 +13,18 @@
 		<dl>
 			<dt>Worker</dt>
 			<dd>
-				<a href="/workers/${job.worker}"><jesque:workerShortName workerName="${job.worker}"/></a> on <b class="queue-tag">${job.queue}</b> at <b><span class="time"><jesque:formatDate date="${job.failedAt}"/></span></b>
+				<g:link controller="jesqueWorkers" action="detail" id="${job.worker}"><jesque:workerShortName workerName="${job.worker}"/></g:link> on <b class="queue-tag">${job.queue}</b> at <b><span class="time"><jesque:formatDate date="${job.failedAt}"/></span></b>
 				<g:if test="${job.retriedAt}">
 				<div class="retried">
 					Retried <b><span class="time"><jesque:formatDate date="${job.retriedAt}"/></span></b>
-					<a href="/failed/remove/${offset + index}" class="remove" rel="remove">Remove</a>
+					<g:link controller="failed" action="remove" id="${offset + index}" class="remove" rel="remove">Remove</g:link>
 				</div>
 				</g:if>
 				<g:else>
 				<div class="controls">
-					<a href="/failed/requeue/${offset + index}" rel="retry">Retry</a>
+                    <g:link controller="failed" action="requeue" id="${offset + index}" class="remove" rel="remove">Retry</g:link>
 					or
-					<a href="/failed/remove/${offset + index}" rel="remove">Remove</a>
+                    <g:link controller="failed" action="remove" id="${offset + index}" class="remove" rel="remove">Remove</g:link>
 				</div>
                 </g:else>
             </dd>

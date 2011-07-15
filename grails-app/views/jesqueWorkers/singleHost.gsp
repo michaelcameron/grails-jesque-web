@@ -12,11 +12,11 @@
 	<tr>
 		<td class="icon"><img src="${g.resource(dir:'images', file:worker.state.toString().toLowerCase() + '.png')}" alt="${worker.state.toString().toLowerCase()}" title="${worker.state.toString().toLowerCase()}"></td>
 		<td class="where"><g:link action="detail" id="${worker}">${worker.host}:${worker.pid}</g:link></td>
-		<td class="queues"><g:each in="${worker.queues}" var="queue"><a class="queue-tag" href="/queues/${queue}">${queue}</a></g:each></td>
+		<td class="queues"><g:each in="${worker.queues}" var="queue"><g:link class="queue-tag" controller="jesqueQueues" action="detail" id="${queue}">${queue}</g:link></g:each></td>
 		<td class="process">
 		<g:if test="${worker.status}">
 			<code>${worker.status.payload.className}</code>
-			<small><a class="queue time" href="/working/${worker}"><jesque:formatDate date="${worker.status.runAt}"/></a></small>
+			<small><g:link class="queue time" controller="jesqueWorking" action="detail" id="${worker}"><jesque:formatDate date="${worker.status.runAt}"/></g:link></small>
 		</g:if>
 		<g:else>
 			<span class="waiting">Waiting for a job...</span>

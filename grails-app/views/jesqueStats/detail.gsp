@@ -19,7 +19,7 @@
       </tr>
       <g:each in="${keys}" var="key">
       <tr>
-          <th><a href="/stats/keys/${key}">${key}</a></th>
+          <th><g:link controller="jesqueStats" action="keys" id="${key}">${key}</g:link></th>
           <td>${key.type}</td>
           <td>${key.size}</td>
       </tr>

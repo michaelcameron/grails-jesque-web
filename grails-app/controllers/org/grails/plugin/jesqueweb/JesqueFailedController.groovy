@@ -1,5 +1,7 @@
 package org.grails.plugin.jesqueweb
 
+import net.greghaines.jesque.meta.dao.FailureDAO
+
 class JesqueFailedController extends JesqueController {
 
     def index = {
@@ -16,5 +18,20 @@ class JesqueFailedController extends JesqueController {
 
         model
     }
-    
+
+    def requeue = {
+        String id = params.id
+        if( id.isLong() )
+            failureDao.requeue(id.toLong())
+
+        redirect action:index
+    }
+
+    def remove = {
+        String id = params.id
+        if( id.isLong() )
+            failureDao.remove(id.toLong())
+
+        redirect action:index
+    }
 }
