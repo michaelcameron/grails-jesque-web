@@ -1,6 +1,4 @@
-package org.grails.plugin.jesqueweb
-
-import net.greghaines.jesque.meta.dao.FailureDAO
+package grails.plugin.jesqueweb
 
 class JesqueFailedController extends JesqueController {
 

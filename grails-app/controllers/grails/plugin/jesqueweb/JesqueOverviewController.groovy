@@ -1,4 +1,4 @@
-package org.grails.plugin.jesqueweb
+package grails.plugin.jesqueweb
 
 class JesqueOverviewController extends JesqueController {
 

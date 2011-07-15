@@ -1,4 +1,4 @@
-package org.grails.plugin.jesqueweb
+package grails.plugin.jesqueweb
 
 import net.greghaines.jesque.utils.ResqueDateFormatThreadLocal
 import net.greghaines.jesque.json.ObjectMapperFactory
