@@ -22,7 +22,7 @@ class JesqueWebGrailsPlugin {
 Web interfce to view and manage jesque queues, jobs and workers.
 '''
 
-    def documentation = "https://bitbucket.org/mcameron/grails-jesque-web"
+    def documentation = "https://github.com/michaelcameron/grails-jesque-web"
 
     def doWithWebDescriptor = { xml ->
 
