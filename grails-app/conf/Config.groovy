@@ -1,5 +1,23 @@
 // configuration for plugin testing - will not be included in the plugin zip
- 
+
+grails {
+    redis {
+        //host = 
+        //password =
+        port = 7379
+    }
+}
+
+environments {
+    test {
+        grails {
+            redis {
+                port = 7379
+            }
+        }
+    }
+}
+
 log4j = {
     // Example of changing the log pattern for the default console
     // appender:

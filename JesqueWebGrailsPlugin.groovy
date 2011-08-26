@@ -4,25 +4,27 @@ import net.greghaines.jesque.meta.dao.impl.KeysDAORedisImpl
 import net.greghaines.jesque.meta.dao.impl.WorkerInfoDAORedisImpl
 
 class JesqueWebGrailsPlugin {
-    // the plugin version
-    def version = "0.1"
-    // the version or versions of Grails the plugin is designed for
+    def version = "0.11.M1"
     def grailsVersion = "1.3.0 > *"
-    // the other plugins this plugin depends on
     def dependsOn = [jesque:'0.1 > *']
-    // resources that are excluded from plugin packaging
     def pluginExcludes = [
             "grails-app/views/error.gsp"
     ]
 
-    def author = "Michael Cameron"
-    def authorEmail = "michael.e.cameron@gmail.com"
     def title = "Jesque Web"
     def description = '''\\
 Web interfce to view and manage jesque queues, jobs and workers.
 '''
 
+    def author = "Michael Cameron"
+    def authorEmail = "michael.e.cameron@gmail.com"
+
+    def license = "APACHE"
+    def developers = [
+        [ name: "Michael Cameron", email: "michael.e.cameron@gmail.com" ],
+        [ name: "Ted Naleid", email: "contact@naleid.com" ] ]
     def documentation = "https://github.com/michaelcameron/grails-jesque-web"
+    def scm = [ url: "https://github.com/michaelcameron/grails-jesque-web" ]
 
     def doWithWebDescriptor = { xml ->
 

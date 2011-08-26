@@ -20,17 +20,15 @@ class JesqueTagLib {
 
     def showArgs = {attr, body ->
         out << attr.args?.collect{ ObjectMapperFactory.get().writeValueAsString(it) }?.join("\n")
-	}
+    }
 
-
-	def toJson = {attr, body ->
-		ObjectMapperFactory.get().writeValueAsString(attr.value)
-	}
-
+    def toJson = {attr, body ->
+        out << ObjectMapperFactory.get().writeValueAsString(attr.value)
+    }
 
     def asBacktrace = {attr, body ->
         def exception = attr.exception
 
         out << (exception ? JesqueUtils.createBacktrace(exception).join("\n") : null)
-	}
+    }
 }

@@ -16,19 +16,29 @@ grails.project.dependency.resolution = {
 
         // uncomment the below to enable remote dependency resolution
         // from public Maven repositories
-        //mavenLocal()
-        //mavenCentral()
-        //mavenRepo "http://snapshots.repository.codehaus.org"
-        //mavenRepo "http://repository.codehaus.org"
-        //mavenRepo "http://download.java.net/maven/2/"
-        //mavenRepo "http://repository.jboss.com/maven2/"
+        mavenLocal()
+        mavenCentral()
+        mavenRepo "http://snapshots.repository.codehaus.org"
+        mavenRepo "http://repository.codehaus.org"
+        mavenRepo "http://download.java.net/maven/2/"
+        mavenRepo "http://repository.jboss.com/maven2/"
     }
     dependencies {
-        // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes eg.
+        test("org.seleniumhq.selenium:selenium-htmlunit-driver:2.3.1") {
+            excludes "xercesImpl", "xmlParserAPIs", "xml-apis", "xerces", "commons-logging"
+        }
+        build('net.sourceforge.nekohtml:nekohtml:1.9.14') {
+            excludes "xml-apis"
+        }
 
-        // runtime 'mysql:mysql-connector-java:5.1.13'
+        test "org.codehaus.geb:geb-spock:0.6.0"
+
+        plugins{
+            compile(':redis:1.0.0.M7', ':jesque:0.11.M2')
+            build(':release:1.0.0.M2') {
+                excludes "xercesImpl", "xmlParserAPIs", "xml-apis", 'svn', 'nekohtml'
+                export = false
+            }
+        }
     }
 }
-
-grails.plugin.location.jesque = '../grails-jesque'
-grails.plugin.location.redis = '../grails-redis'

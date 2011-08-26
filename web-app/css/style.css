@@ -157,6 +157,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: bold; }
 #main p.pagination a.more { float:right;}
 
 #main form {float:right; margin-top:-10px;}
+form.remove-worker {margin: 0 !important}
 
 #main .time a.toggle_format {text-decoration:none;}
 

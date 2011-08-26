@@ -1,6 +1,6 @@
 class UrlMappings {
 
-	static mappings = {
+    static mappings = {
         "/jesque/overview/$action?/$id?" { controller = "jesqueOverview" }
         "/jesque/queues/$action?/$id?" { controller = "jesqueQueues" }
         "/jesque/failed/$action?/$id?" { controller = "jesqueFailed" }
@@ -9,5 +9,5 @@ class UrlMappings {
         "/jesque/working/$action?/$id?" { controller = "jesqueWorking" }
 
         "/" (controller: "jesqueOverview")
-	}
+    }
 }

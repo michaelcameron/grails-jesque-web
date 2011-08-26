@@ -8,10 +8,10 @@
         </g:if>
         <g:else>
         <h1>Pending jobs on <span class="hl">${queue}</span></h1>
-        <form method="POST" action="/queues/${queue}/remove" class="remove-queue">
+        <g:form action="remove" class="remove-queue" id="${queue.name}">
             <input type="submit" name="" value="Remove Queue" onclick="return confirm('Are you absolutely sure? This cannot be undone.');" />
-        </form>
-        <p class="sub">Showing x to y of <b>${queue.size}</b> jobs</p>
+        </g:form>
+        <p class="sub">Showing ${total ? offset + 1 : 0} to ${Math.min(offset + max, total)} of <b>${total}</b> jobs</p>
         <table class="jobs">
             <tr>
                 <th>Class</th>
@@ -20,8 +20,7 @@
             <g:each in="${queue.jobs}" var="job">
             <tr>
                 <td class="class">${job.className}</td>
-                <%--todo: jsonify the args before showing--%>
-                <td class="args">${job.args}</td>
+                <td class="args"><jesque:toJson value="${job.args}"/></td>
             </tr>
             </g:each>
             <g:if test="${!queue.jobs}">
@@ -33,5 +32,6 @@
 
         </g:else>
     
+        <g:paginate total="${total}" offset="${offset}" max="${max}"/>
     </body>
 </html>

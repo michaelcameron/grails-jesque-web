@@ -6,4 +6,7 @@ syntax: glob
 *.un~
 out
 
+plugin.xml
+*.zip
+
 target
