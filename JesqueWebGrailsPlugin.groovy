@@ -4,7 +4,7 @@ import net.greghaines.jesque.meta.dao.impl.KeysDAORedisImpl
 import net.greghaines.jesque.meta.dao.impl.WorkerInfoDAORedisImpl
 
 class JesqueWebGrailsPlugin {
-    def version = "0.11.M1"
+    def version = "0.11.M2"
     def grailsVersion = "1.3.0 > *"
     def dependsOn = [jesque:'0.1 > *']
     def pluginExcludes = [
