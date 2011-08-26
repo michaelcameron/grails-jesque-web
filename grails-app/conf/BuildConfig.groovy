@@ -35,10 +35,6 @@ grails.project.dependency.resolution = {
 
         plugins{
             compile(':redis:1.0.0.M7', ':jesque:0.11.M2')
-            build(':release:1.0.0.M2') {
-                excludes "xercesImpl", "xmlParserAPIs", "xml-apis", 'svn', 'nekohtml'
-                export = false
-            }
         }
     }
 }
