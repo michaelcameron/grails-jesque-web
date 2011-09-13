@@ -26,15 +26,19 @@ grails.project.dependency.resolution = {
     dependencies {
         test("org.seleniumhq.selenium:selenium-htmlunit-driver:2.3.1") {
             excludes "xercesImpl", "xmlParserAPIs", "xml-apis", "xerces", "commons-logging"
+            export = false
         }
         build('net.sourceforge.nekohtml:nekohtml:1.9.14') {
             excludes "xml-apis"
+            export = false
         }
 
-        test "org.codehaus.geb:geb-spock:0.6.0"
+        test("org.codehaus.geb:geb-spock:0.6.0") {
+            export = false
+        }
 
         plugins{
-            compile(':redis:1.0.0.M7', ':jesque:0.11.M2')
+            compile(':redis:latest.integration', ':jesque:latest.integration')
         }
     }
 }
