@@ -2,9 +2,9 @@
 
 grails {
     redis {
-        //host = 
+        //host =
         //password =
-        port = 7379
+        //port = 7379
     }
 }
 

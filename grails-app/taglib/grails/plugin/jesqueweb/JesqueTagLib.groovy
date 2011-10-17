@@ -3,6 +3,7 @@ package grails.plugin.jesqueweb
 import net.greghaines.jesque.utils.ResqueDateFormatThreadLocal
 import net.greghaines.jesque.json.ObjectMapperFactory
 import net.greghaines.jesque.utils.JesqueUtils
+import net.greghaines.jesque.JobFailure
 
 class JesqueTagLib {
 
@@ -27,8 +28,11 @@ class JesqueTagLib {
     }
 
     def asBacktrace = {attr, body ->
-        def exception = attr.exception
-
-        out << (exception ? JesqueUtils.createBacktrace(exception).join("\n") : null)
+        if( attr.exception ) {
+            out << (attr.exception ? JesqueUtils.createBacktrace(attr.exception).join("\n") : null)
+        } else if(attr.failure) {
+            JobFailure jobFailure = attr.failure
+            out << jobFailure.backtrace?.join("\n")
+        }
     }
 }
