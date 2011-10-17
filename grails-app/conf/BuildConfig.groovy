@@ -38,7 +38,7 @@ grails.project.dependency.resolution = {
         }
 
         plugins{
-            compile(':redis:1.0.0.M7', ':jesque:0.11.M5')
+            compile(':redis:1.0.0.M9', ':jesque:0.11.M5')
         }
     }
 }
