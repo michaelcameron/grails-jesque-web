@@ -36,11 +36,14 @@ grails.project.dependency.resolution = {
         test("org.codehaus.geb:geb-spock:0.6.0") {
             export = false
         }
-
-        build('net.greghaines:jesque:1.0.1-SNAPSHOT')
+        
+        build('net.greghaines:jesque:1.0.0'){
+            transitive = false
+        }
 
         plugins{
             compile(':redis:1.0.0.M9', ':jesque:0.11.M5')
+            test ":spock:0.5-groovy-1.7"
         }
     }
 }

@@ -29,10 +29,10 @@ class JesqueTagLib {
 
     def asBacktrace = {attr, body ->
         if( attr.exception ) {
-            out << (attr.exception ? JesqueUtils.createBacktrace(attr.exception).join("\n") : null)
+            out << (attr.exception ? JesqueUtils.createBacktrace(attr.exception).join("<br>\n") : null)
         } else if(attr.failure) {
             JobFailure jobFailure = attr.failure
-            out << jobFailure.backtrace?.join("\n")
+            out << jobFailure?.exception?.stackTrace?.join("<br>\n")
         }
     }
 }
