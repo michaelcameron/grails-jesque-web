@@ -4,11 +4,12 @@ import net.greghaines.jesque.meta.dao.impl.KeysDAORedisImpl
 import net.greghaines.jesque.meta.dao.impl.WorkerInfoDAORedisImpl
 
 class JesqueWebGrailsPlugin {
-    def version = "0.12"
+    def version = "0.13"
     def grailsVersion = "1.3.0 > *"
     def dependsOn = [jesque:'0.1 > *']
     def pluginExcludes = [
-            "grails-app/views/error.gsp"
+            "grails-app/views/error.gsp",
+            "src/groovy/grails/plugin/jesqueweb/test/AbstractFunctionalSpec.groovy"            
     ]
 
     def title = "Jesque Web"
