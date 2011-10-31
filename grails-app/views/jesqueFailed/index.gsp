@@ -33,11 +33,11 @@
             <dt>Arguments</dt>
             <dd><pre><jesque:showArgs args="${job?.payload?.args ?: 'null'}"/></pre></dd>
             <dt>Exception</dt>
-            <dd><code>${job?.exceptionString ?: 'null'}</code></dd>
+            <dd><code>${job?.exception ?: 'null'}</code></dd>
             <dt>Error</dt>
             <dd class="error">
-                <a href="#" class="backtrace">${job?.error ?: 'no message'}</a>
-                <pre style="display: none;">${job?.exception}<jesque:asBacktrace failure="${job}"/></pre>
+                
+                <pre style="display: none;">${job?.exception}</pre>
             </dd>
         </dl>
         <div class="r"></div>
