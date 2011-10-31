@@ -37,7 +37,9 @@ grails.project.dependency.resolution = {
             export = false
         }
         
-        build('net.greghaines:jesque:1.0.1-SNAPSHOT')
+        build('net.greghaines:jesque:1.0.0'){
+            transitive = false
+        }
 
         plugins{
             compile(':redis:1.0.0.M9', ':jesque:0.11.M5')
