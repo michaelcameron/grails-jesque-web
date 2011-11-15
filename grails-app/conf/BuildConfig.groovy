@@ -37,10 +37,14 @@ grails.project.dependency.resolution = {
             export = false
         }
 
-        build('net.greghaines:jesque:1.0.1-SNAPSHOT')
-
-        plugins{
-            compile(':redis:1.0.0.M9', ':jesque:0.11.M5')
+        build('net.greghaines:jesque:1.0.1',
+                'org.codehaus.jackson:jackson-core-asl:1.8.4',
+                'org.codehaus.jackson:jackson-mapper-asl:1.8.4',) {
+            transitive = false
         }
+    }
+    plugins{
+        compile(':redis:1.0.0.M9')
+        compile(':jesque:0.11.M5')
     }
 }

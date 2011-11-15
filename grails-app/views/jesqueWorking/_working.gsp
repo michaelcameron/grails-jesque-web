@@ -18,18 +18,18 @@
     <g:each in="${working}" var="worker">
         <tr>
             <td class="icon"><img src="<g:resource dir="images" file="${worker.state.name().toLowerCase()}.png"/>"
-                                  alt="${worker.state.toLowerCase()}"/>" title="${worker.state.name().toLowerCase()}" />"></td>
+                                  alt="${worker.state.name().toLowerCase()}" title="${worker.state.name().toLowerCase()}"/></td>
             <td class="where"><g:link controller="jesqueWorkers" action="detail"
                                       id="${worker}">${worker.host}:${worker.pid}</g:link></td>
             <td class="queues queue">
                 <g:link class="queue-tag" controller="jesqueQueues" action="detail"
-                        id="${worker.status.queue}">${worker.status.queue}</g:link>
+                        id="${worker.status?.queue}">${worker.status?.queue}</g:link>
             </td>
             <td class="process">
-                <g:if test="${!worker.status.queue}">
-                    <code>${worker.status.payload.className}"</code>
+                <g:if test="${worker.status?.queue}">
+                    <code>${worker.status.payload.className}</code>
                     <small><g:link class="queue time" controller="jesqueWorking" action="detail"
-                                   id="/working/${worker}">${worker.status.runAt}"</g:link></small>
+                                   id="${worker}">${worker.status.runAt}</g:link></small>
                 </g:if>
                 <g:else>
                     <span class="waiting">Waiting for a job...</span>
