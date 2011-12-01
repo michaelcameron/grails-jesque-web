@@ -1,6 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
-    <head></head>
+    <head>
+        <meta name="layout" content="jesque"/>
+    </head>
     <body>
 
     <g:render template="/jesqueQueues/queues" model="${[queueList:queueList,totalFailureCount:totalFailureCount]}"/>

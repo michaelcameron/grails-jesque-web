@@ -1,6 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
-    <head></head>
+    <head>
+        <meta name="layout" content="jesque"/>
+    </head>
     <body>
     <h1 class="wi">Workers</h1>
     <p class='intro'>The hostnames below all have registered workers. Select a hostname to view its workers, or "all" to see all workers.</p>
