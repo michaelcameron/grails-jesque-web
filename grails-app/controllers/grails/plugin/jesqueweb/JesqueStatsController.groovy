@@ -73,15 +73,15 @@ class JesqueStatsController extends JesqueController {
     }
 
     private Map<String,Object> createResqueStats() {
-		def resqueStats = [:]
-		resqueStats.environment = "development"
-		resqueStats.failed = failureDao.count
-		resqueStats.pending =  queueInfoDao.pendingCount
-		resqueStats.processed = queueInfoDao.processedCount
-		resqueStats.queues = queueInfoDao.queueNames.size()
-		resqueStats.servers = "[ $jesqueConfig.URI ]"
-		resqueStats.workers = workerInfoDao.workerCount
-		resqueStats.working = workerInfoDao.activeWorkerCount
-		return resqueStats
-	}
+        def resqueStats = [:]
+        resqueStats.environment = "development"
+        resqueStats.failed = failureDao.count
+        resqueStats.pending =  queueInfoDao.pendingCount
+        resqueStats.processed = queueInfoDao.processedCount
+        resqueStats.queues = queueInfoDao.queueNames.size()
+        resqueStats.servers = "[ $jesqueConfig.URI ]"
+        resqueStats.workers = workerInfoDao.workerCount
+        resqueStats.working = workerInfoDao.activeWorkerCount
+        return resqueStats
+    }
 }
