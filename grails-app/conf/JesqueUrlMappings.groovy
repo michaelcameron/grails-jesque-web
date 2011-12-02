@@ -7,6 +7,7 @@ class JesqueUrlMappings {
         "/jesque/stats/$action?/$id?" { controller = "jesqueStats" }
         "/jesque/workers/$action?/$id?" { controller = "jesqueWorkers" }
         "/jesque/working/$action?/$id?" { controller = "jesqueWorking" }
+        "/jesque/scheduled/$action?/$id?" { controller = "jesqueScheduled" }
 
         "/jesque" (controller: "jesqueOverview")
     }

@@ -2,8 +2,8 @@
 
 grails {
     redis {
-        //host =
-        //password =
+        host = 'redis-test.warmhealth.com'
+        password = '50HczJksx6y643S'
         //port = 7379
     }
 }

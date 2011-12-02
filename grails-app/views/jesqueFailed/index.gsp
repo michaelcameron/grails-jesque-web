@@ -47,7 +47,9 @@
             <div class="r"></div>
         </li>
         </g:each>
-        <g:paginate total="${total}" offset="${offset}" max="${max}"/>
+        <div class="paginateButtons">
+            <g:paginate total="${total}" offset="${offset}" max="${max}"/>
+        </div>
     </ul>
 </body>
 </html>

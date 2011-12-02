@@ -33,7 +33,9 @@
         </table>
 
         </g:else>
-    
-        <g:paginate total="${total}" offset="${offset}" max="${max}"/>
+
+        <div class="paginateButtons">
+            <g:paginate total="${total}" offset="${offset}" max="${max}"/>
+        </div>
     </body>
 </html>
