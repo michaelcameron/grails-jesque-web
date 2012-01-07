@@ -1,6 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
-  <head></head>
+  <head>
+        <meta name="layout" content="${(grailsApplication.config?.jesque?.views?.layout)?:'jesque'}"/> 
+    </head> 
   <body>
   <h1>${title}</h1>
   <g:if test="${subTitle}"><p class="sub">${subTitle}</p></g:if>

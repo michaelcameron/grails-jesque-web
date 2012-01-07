@@ -1,4 +1,10 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
+<html>
+  <head>
+        <meta name="layout" content="${(grailsApplication.config?.jesque?.views?.layout)?:'jesque'}"/> 
+    </head> 
+
+  <body> 
 
 <h1>Failed Jobs</h1>
 <g:if test="${failures}">
@@ -45,3 +51,7 @@
     </g:each>
     <g:paginate total="${total}" offset="${offset}" max="${max}"/>
 </ul>
+
+
+  </body> 
+  </html> 

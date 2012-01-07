@@ -1,6 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
-    <head></head>
+  <head>
+        <meta name="layout" content="${(grailsApplication.config?.jesque?.views?.layout)?:'jesque'}"/> 
+    </head> 
     <body>
 
     <p class="sub">Showing ${offset + 1} to ${Math.min(offset + max, total)} of <b>${total}</b> elements</p>

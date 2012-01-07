@@ -1,4 +1,10 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
+<html>
+  <head>
+        <meta name="layout" content="${(grailsApplication.config?.jesque?.views?.layout)?:'jesque'}"/> 
+    </head> 
+
+  <body> 
 <h1 class="wi">${workers.size()} Workers</h1>
 <p class="intro">The workers listed below are all registered as active on your system.</p>
 <table class="workers">
@@ -33,3 +39,7 @@
     </tr>
     </g:if>
 </table>
+
+
+  </body> 
+  </html> 

@@ -1,6 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
-    <head></head>
+  <head>
+        <meta name="layout" content="${(grailsApplication.config?.jesque?.views?.layout)?:'jesque'}"/> 
+    </head> 
     <body>
     <g:if test="${!key}">
     <h1>Key "${keyName}" is not a valid key</h1>
