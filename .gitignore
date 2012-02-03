@@ -1,3 +1,7 @@
+target
+stacktrace.log
+plugin.xml
 *.ipr
 *.iml
 *.iws
+*.zip
