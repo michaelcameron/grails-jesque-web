@@ -6,7 +6,10 @@
 <body>
     <h1>Failed Jobs</h1>
     <g:if test="${failures}">
-    <g:form action="clear" class="clear-failed">
+    <g:form action="retryAll">
+        <input type="submit" name="" value="Retry all Jobs" />
+    </g:form>
+    <g:form action="clear">
         <input type="submit" name="" value="Clear Failed Jobs" />
     </g:form>
     </g:if>

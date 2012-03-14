@@ -39,4 +39,12 @@ class JesqueFailedController extends JesqueController {
 
         redirect action:index
     }
+
+    def retryAll = {
+        failureDao.count.times{
+            failureDao.requeue(it)
+        }
+
+        redirect action:index
+    }
 }
