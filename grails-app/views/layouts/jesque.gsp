@@ -11,16 +11,9 @@
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
         <title>Resque.</title>
         <link rel="shortcut icon" href="<g:resource file="favicon.ico" />" />
-        <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png" />
-        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon-72x72-precomposed.png" />
-        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114x114-precomposed.png" />
-        <link rel="stylesheet" type="text/css" href="<g:resource dir="css" file="reset.css" />" />
-        <link rel="stylesheet" type="text/css" href="<g:resource dir="css" file="style.css" />" />
-        <%-- todo: use resources plugin --%>
-        <script type="text/javascript" src="<g:resource dir="js" file="date.js" />"></script>
-        <script type="text/javascript" src="<g:resource dir="js" file="jquery-1.5.1.min.js" />"></script>
-        <script type="text/javascript" src="<g:resource dir="js" file="jquery.relatize_date.js" />"></script>
-        <script type="text/javascript" src="<g:resource dir="js" file="jesque.js" />"></script>
+
+        <r:require module="jesque"/>
+        <r:layoutResources/>
     </head>
     <body>
         <div class="header">
@@ -50,5 +43,6 @@
             <%--todo: add common properties via some DRY approach --%>
             <p>Connected to Redis namespace ${namespace} on ${redisUri}</p>
         </div>
+        <r:layoutResources/>
     </body>
 </html>

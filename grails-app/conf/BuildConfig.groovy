@@ -46,10 +46,17 @@ grails.project.dependency.resolution = {
     plugins{
         compile(':redis:1.0.0.M9')
         compile(':jesque:0.3.0')
+        compile(':resources:1.1.6')
+        compile(":hibernate:$grailsVersion")
+        compile(":tomcat:$grailsVersion")
+
+        compile(':geb:0.6.3',':spock:0.6') {
+            export = false
+        }
         compile(':release:1.0.1') {
             export = false
         }
-        compile(':jquery:1.6.1.1') {
+        compile(':jquery:1.7.1') {
             transitive = false
         }
     }

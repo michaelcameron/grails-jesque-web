@@ -1,9 +1,10 @@
-// configuration for plugin testing - will not be included in the plugin zip
+grails.views.default.codec="none" // none, html, base64
+grails.views.gsp.encoding="UTF-8"
 
+
+// configuration for plugin testing - will not be included in the plugin zip
 grails {
     redis {
-        host = 'redis-test.warmhealth.com'
-        password = '50HczJksx6y643S'
         //port = 7379
     }
 }

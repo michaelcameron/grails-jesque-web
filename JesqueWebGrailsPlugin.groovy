@@ -6,7 +6,7 @@ import net.greghaines.jesque.meta.dao.impl.WorkerInfoDAORedisImpl
 class JesqueWebGrailsPlugin {
     def version = "0.3.0"
     def grailsVersion = "1.3.0 > *"
-    def dependsOn = [jesque:'0.3.0 > *']
+    def dependsOn = [jesque:'0.3.1 > *']
     def pluginExcludes = [
             "grails-app/views/error.gsp"
     ]
