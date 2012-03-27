@@ -8,7 +8,9 @@ class JesqueWebGrailsPlugin {
     def grailsVersion = "1.3.0 > *"
     def dependsOn = [jesque:'0.3.0 > *']
     def pluginExcludes = [
-            "grails-app/views/error.gsp"
+            "grails-app/views/error.gsp",
+            "src/groovy/grails/plugin/jesqueweb/test/**",
+            "test/**",
     ]
 
     def title = "Jesque Web"
