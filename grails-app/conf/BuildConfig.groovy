@@ -47,7 +47,7 @@ grails.project.dependency.resolution = {
         compile(':redis:1.0.0.M9')
         compile(':jesque:0.3.0')
         compile(':resources:1.1.6')
-        compile(":hibernate:$grailsVersion")
+        build(":hibernate:$grailsVersion")
         build(":tomcat:$grailsVersion")
 
         test(':geb:0.6.3',':spock:0.6') {
