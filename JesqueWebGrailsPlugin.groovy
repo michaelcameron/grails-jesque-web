@@ -4,7 +4,7 @@ import net.greghaines.jesque.meta.dao.impl.KeysDAORedisImpl
 import net.greghaines.jesque.meta.dao.impl.WorkerInfoDAORedisImpl
 
 class JesqueWebGrailsPlugin {
-    def version = "0.3.3"
+    def version = "0.3.3-SNAPSHOT"
     def grailsVersion = "1.3.0 > *"
     def dependsOn = [jesque:'0.3.0 > *']
     def pluginExcludes = [
@@ -15,7 +15,7 @@ class JesqueWebGrailsPlugin {
 
     def title = "Jesque Web"
     def description = '''\\
-Web interfce to view and manage jesque queues, jobs and workers.
+Web interface to view and manage jesque queues, jobs and workers.
 '''
 
     def author = "Michael Cameron"

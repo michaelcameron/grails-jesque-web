@@ -47,13 +47,13 @@ grails.project.dependency.resolution = {
         compile(':redis:1.0.0.M9')
         compile(':jesque:0.3.0')
         compile(':resources:1.1.6')
-        build(":hibernate:$grailsVersion")
-        build(":tomcat:$grailsVersion")
+        compile(":hibernate:$grailsVersion")
+        compile(":tomcat:$grailsVersion")
 
         test(':geb:0.6.3',':spock:0.6') {
             export = false
         }
-        build(':release:1.0.1') {
+        build(':release:2.0.0', ':rest-client-builder:1.0.2') {
             export = false
         }
         compile(':jquery:1.7.1') {
