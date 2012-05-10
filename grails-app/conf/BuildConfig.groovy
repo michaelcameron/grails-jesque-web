@@ -37,9 +37,9 @@ grails.project.dependency.resolution = {
             export = false
         }
 
-        build('net.greghaines:jesque:1.0.1',
-                'org.codehaus.jackson:jackson-core-asl:1.8.4',
-                'org.codehaus.jackson:jackson-mapper-asl:1.8.4',) {
+        build('net.greghaines:jesque:1.1.2',
+                'org.codehaus.jackson:jackson-core-asl:1.9.6',
+                'org.codehaus.jackson:jackson-mapper-asl:1.9.6',) {
             transitive = false
         }
     }
