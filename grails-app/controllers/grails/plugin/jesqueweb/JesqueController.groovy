@@ -11,7 +11,7 @@ import grails.plugin.jesque.TriggerDaoService
 
 abstract class JesqueController {
 
-    def tabs = ["Overview", "Working", "Failed", "Queues", "Workers", "Jobs", "Stats", "Scheduled"]
+    def tabs = ["Overview", "Working", "Failed", "Queues", "Workers", "Stats", "Scheduled"]
 
     Config jesqueConfig
     QueueInfoDAO queueInfoDao
